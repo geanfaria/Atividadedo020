@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .livro {
+            border: 1px solid #ddd;
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .livro img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+    </style>
+   
+</head>
+
+    <header>
+        <h1>Livraria</h1>
+    </header>
+    <body>
+        <h2>Bem-vindo à Livraria Online</h2>
+        <p>Insira o valor total da sua compra:</p>
+        <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+        <button onclick="calcularDesconto()">Calcular Desconto</button>
+        <p>Desconto aplicado: <span id="desconto"></span></p>
+    
+        <script>
+            function calcularDesconto() {
+                const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+    
+                let desconto = 0;
+    
+                if (valorCompra > 200) {
+                    desconto = 0.2; // 20%
+                } else if (valorCompra > 100) {
+                    desconto = 0.1; // 10%
+                }
+                else if(valorCompra<=100){
+                    desconto=0.05;
+    
+                }
+    
+                const valorDesconto = valorCompra * desconto;
+                document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+            }
+           
+        </script>
+    <div class="container">
+        <div class="livro">
+            <img src="p.jpg" alt="Livro 1">
+            <h2>Alerta Vermelho</h2>
+            <p>Bill Browder</p>
+            
+        </div>
+        <div class="livro">
+            <img src="pp.jpg" alt="Livro 2">
+            <h2>Nunca Foi Segredo</h2>
+            <p>Padre Reginaldo Manzotti</p>
+            
+            
+        </div>
+        <div class="livro">
+            <img src="ppp.jpg" alt="Livro 3">
+            <h2>Cara Paz</h2>
+            <p>Lisa Ginzburg</p>
+            
+        </div>
+    </div>
+   <center> <form> </center>
+   <center> Defina seu nivel de satisfação:<br> </body> </center>
+    <center><input type="range" name="satisfação" min = "0" max="10">
+        muito satisfeitos </center>
+
+    <center> <br> quantidade (entre 1 e 5): <input type="number" name="quantidade" min="1" max="5"></center>
+    <center>   </form> </body> 
+    
+</body>
+</html>
